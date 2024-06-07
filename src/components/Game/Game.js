@@ -14,17 +14,13 @@ function Game() {
   const [guesses, setGuesses] = useState([]);
 
   const handleUpdateGuesses = (guess) => {
-    const guessData = {
-      id: crypto.randomUUID(),
-      guess: guess.toUpperCase(),
-    }
-    const nextGuesses = [...guesses, guessData];
+    const nextGuesses = [...guesses, guess.toUpperCase()];
     setGuesses(nextGuesses);
   }
 
   return (
     <>
-      {guesses.length > 0 && <GuessDisplay guesses={guesses}/>}
+      {<GuessDisplay guesses={guesses}/>}
       <GuessInput updateGuesses={handleUpdateGuesses}/>
     </>
   );
