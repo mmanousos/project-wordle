@@ -17,6 +17,7 @@ const GuessInput = ({ updateGuesses, gameOver }) => {
         type="text"
         required={true}
         pattern={'[a-zA-Z]{5}'}
+        title="5 letter word"
         value={guess}
         onChange={(event) => setGuess(event.target.value)}
         placeholder="five letters here..."
