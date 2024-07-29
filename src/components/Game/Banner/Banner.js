@@ -1,4 +1,4 @@
-export default function Banner({ answer, guesses, winCondition }) {
+export default function Banner({ answer, guesses, winCondition, restartGame }) {
   return (
     <div className={`banner ${winCondition === "win"? 'happy' : 'sad'}`}>
         {winCondition === "win" ?
@@ -9,6 +9,7 @@ export default function Banner({ answer, guesses, winCondition }) {
             <strong>Game Over!</strong> The word was <strong>{answer}</strong>
           </p>
         }
+        <button onClick={restartGame}><strong>Restart</strong></button>
     </div>
   )
 }
